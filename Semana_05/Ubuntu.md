@@ -77,3 +77,14 @@ OBS: czf (Criar zip file) -C para melhor organização do nome (função do tar)
 ```
 tar -czf "${ARQUIVO_DIR}/logs_$(date +%F).tar.gz" -C "$TEMP_DIR" .
 ```
+* Verificando o conteudo compactado:
+
+```
+ tar -tzvf logs_2025-11-24.tar.gz
+```
+
+* Descompactando:
+
+```
+tar -xzvf logs_2025-11-24.tar.gz
+```
