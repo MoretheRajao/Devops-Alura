@@ -90,10 +90,16 @@ tar -xzvf logs_2025-11-24.tar.gz
 ```
 
 * Agendando tarefas com o cron:
-Comando abrir cron: crontab -e
-
-Configurando parâmetros (min, h, dia do mês, mês e dia da semana) + local do script : 
+> Comando abrir cron: 
+```
+crontab -e
+```
+> Configurando parâmetros (min, h, dia do mês, mês e dia da semana) + local do script : 
+```
 0 2 * * * /root/scripts-linux/monitoramento-log
-
-Comando visualizar conteudo cron: crontab -l
+```
+> Comando visualizar conteudo cron:
+```
+crontab -l
+```
 
