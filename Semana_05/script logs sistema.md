@@ -28,3 +28,15 @@ else
         echo "$(date): Sem conexão com a internet." >> $LOG_DIR/monitoramento_rede.txt
 fi
 ```
+➡️ Verificando a conectividade de uma aplicação:
+
+✴️ http/2 200 = foi bem sucedida a conexão
+✴️ -s do curl é para suprimir o texto e deixar somente o que "filtrei"
+```
+if  curl -s --head https://www.alura.com.br/ | grep "HTTP/2 200" > /dev/null; then
+        echo "$(date): Conexao com a Alura bem-sucedida." >> $LOG_DIR/monitoramento_rede.txt
+else
+        echo "$(date): Falha ao conectar com a Alura." >> $LOG_DIR/monitoramento_rede.txt
+fi
+```
+
