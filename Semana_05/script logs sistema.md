@@ -22,5 +22,9 @@ grep -E "fail(ed)?|error|denied|unauthorized" /var/log/syslog | awk '{print $1, 
 ➡️ Verificando conectividade com a internet (Script)
 
 ```
-ping -c 1 8.8.8.8
+if ping -c 1 8.8.8.8 > /dev/null; then
+        echo "$(date): Conectividade ativa." >> $LOG_DIR/monitoramento_rede.txt
+else
+        echo "$(date): Sem conexão com a internet." >> $LOG_DIR/monitoramento_rede.txt
+fi
 ```
