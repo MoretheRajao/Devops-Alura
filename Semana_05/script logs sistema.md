@@ -39,4 +39,14 @@ else
         echo "$(date): Falha ao conectar com a Alura." >> $LOG_DIR/monitoramento_rede.txt
 fi
 ```
+➡️ Usando função (Script):
 
+```
+function monitorar_rede() {
+        .
+        .
+        .
+}
+
+monitorar_rede
+```
