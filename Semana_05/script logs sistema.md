@@ -52,17 +52,23 @@ monitorar_rede
 ```
 ➡️ Verificando disco (Script):
 
+✴️ "du -sh" é utilizado para verificar o uso de disco de diretórios especificos.
 ✴️ "function executar_monitoramento" é utilizando para melhorar a organização no uso de multiplas funções.
 
 ```
 function monitorar_disco() {
+        echo "$(date)" >> $LOG_DIR/monitoramento_disco.txt
         df -h | grep -v "snapfuse" | awk '$5+0 > 50 {print $1 "esta com " $5 " de uso."}' >> $LOG_DIR/monitoramento_disco.txt
+        echo "Uso de disco no diretorio principal:" >> $LOG_DIR/monitoramento_disco.txt
+        du -sh /root >> $LOG_DIR/monitoramento_disco.txt
+
 }
+
+
 function executar_monitoramento() {
-        monitorar_logs
-        monitorar_rede
         monitorar_disco
 }
+
 executar_monitoramento
 
 ```
