@@ -50,3 +50,19 @@ function monitorar_rede() {
 
 monitorar_rede
 ```
+➡️ Verificando disco (Script):
+
+✴️ "function executar_monitoramento" é utilizando para melhorar a organização no uso de multiplas funções.
+
+```
+function monitorar_disco() {
+        df -h | grep -v "snapfuse" | awk '$5+0 > 50 {print $1 "esta com " $5 " de uso."}' >> $LOG_DIR/monitoramento_disco.txt
+}
+function executar_monitoramento() {
+        monitorar_logs
+        monitorar_rede
+        monitorar_disco
+}
+executar_monitoramento
+
+```
