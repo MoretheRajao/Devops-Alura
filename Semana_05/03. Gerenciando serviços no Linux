@@ -1,1 +1,48 @@
+➡️ Comando reload no systemd:
+
+✴️ Sempre utilizar quando tiver alguma alteração ou adicionar serviço.
+
+```
+sudo systemctl daemon-reload
+```
+➡️Criando unidades de serviços:
+
+```
+sudo vim monitoramento-sistema.service
+```
+
+➡️ Habilitar o timer:
+
+✴️ Toda ver que o computador/sistema for reiniciado o serviço será carregado automaticamente.
+```
+sudo systemctl enable monitoramento-sistema.timer
+```
+
+➡️ Inicializar o serviço:
+
+```
+sudo systemctl start monitoramento-sistema.timer
+```
+➡️ Verificação de status do serviço:
+
+```
+sudo systemctl status monitoramento-sistema.timer
+```
+
+➡️ Verificação arquivo de logs do systemd:
+
+```
+sudo journalctl -u monitoramento-sistema.service
+```
+➡️ Parar a execução do serviço:
+
+```
+sudo systemctl stop monitoramento-sistema.timer
+```
+➡️Desabilitar automatico:
+
+```
+sudo systemctl disable monitoramento-sistema.timer
+```
+
 
