@@ -44,5 +44,9 @@ sudo systemctl stop monitoramento-sistema.timer
 ```
 sudo systemctl disable monitoramento-sistema.timer
 ```
+➡️ Excluir permanetemente os serviços anteriores:
 
-
+```
+sudo rm /etc/systemd/system/monitoramento-sistema.timer
+sudo rm /etc/systemd/system/monitoramento-sistema.service
+```
